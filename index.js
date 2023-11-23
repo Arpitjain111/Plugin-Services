@@ -1,9 +1,17 @@
 const express = require('express');
+const cors = require('cors');
 const { getDataByQueryPostgres, getDataByQueryMySql } = require('./src/controllers/run_query')
 
 
 const app = express();
 const PORT = 7071;
+app.use(
+  cors({
+    origin: '*',
+    maxAge: 86400,
+    preflightContinue: true,
+  }),
+);
 
 app.use(express.json());
 
