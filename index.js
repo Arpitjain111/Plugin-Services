@@ -15,8 +15,8 @@ app.use(
 
 app.use(express.json());
 
-app.post('/postgresql/query', getDataByQueryPostgres)
-app.post('/mysql/query', getDataByQueryMySql)
+app.post('/api/v1/postgresql/query', getDataByQueryPostgres)
+app.post('/api/v1/mysql/query', getDataByQueryMySql)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
